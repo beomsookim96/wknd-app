@@ -1,0 +1,20 @@
+.cmp-navigation {
+  
+}
+.cmp-navigation__group {
+  list-style: none;
+}
+.cmp-navigation__item {
+  float: left;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  font-family: sans-serif;
+}
+.cmp-navigation__item--active {}
+// .cmp-navigation__item--level-0 {}
+.cmp-navigation__item--level-0:hover > .cmp-navigation__group {
+  background: #ECECEC;
+}
+.cmp-navigation__item-link {
+  text-decoration: none;
+}

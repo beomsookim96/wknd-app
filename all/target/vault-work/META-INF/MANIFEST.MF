@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Created-By: Apache Jackrabbit FileVault - Package Maven Plugin 1.1.6
+Build-Jdk-Spec: 17
+Implementation-Title: WKND App - All
+Implementation-Version: 1.0.0-SNAPSHOT
+Content-Package-Type: container
+Content-Package-Id: com.adobe.aem.guides.wkndapp:wknd-app.all:1.0.0-SNAP
+ SHOT
+Content-Package-Description: All content package for WKND App
+Content-Package-Roots: /apps/wknd-app-packages,/apps/wknd-app-vendor-pac
+ kages
+

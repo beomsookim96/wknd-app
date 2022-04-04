@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="wknd-app.ui.config" />
+        <module name="wknd-app.ui.tests" />
+        <module name="wknd-app.all" />
+        <module name="wknd-app.it.tests" />
+        <module name="wknd-app.ui.apps" />
+        <module name="wknd-app.core" />
+        <module name="wknd-app.ui.apps.structure" />
+        <module name="wknd-app.ui.content" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

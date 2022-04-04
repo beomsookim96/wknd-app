@@ -1,0 +1,8 @@
+<div class = "myImgContaner">
+    <div data-sly-test="${!properties.url}">
+        <p>Fill the URL</p>
+    </div>
+    <div data-sly-test="${properties.url}">
+        <img class = "myImg" src="${properties.url}"/>
+    </div>
+</div>

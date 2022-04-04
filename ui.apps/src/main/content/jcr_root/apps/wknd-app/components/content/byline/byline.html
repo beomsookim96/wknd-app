@@ -1,0 +1,7 @@
+<div data-sly-use.model="com.adobe.aem.guides.wkndapp.core.models.ByLineModel">
+    <p class="byLineQuote">${properties.quote}</p>
+    <p class="byLineAuthor">${properties.author}</p>
+    <div data-sly-test="${!properties.quote}">
+        <p>fill this</p>
+    </div>
+</div>

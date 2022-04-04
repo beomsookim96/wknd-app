@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>WKND App - All</comment>
+<entry key="allowIndexDefinitions">false</entry>
+<entry key="created">2022-04-04T01:24:34.491Z</entry>
+<entry key="groupId">com.adobe.aem.guides.wkndapp</entry>
+<entry key="name">wknd-app.all</entry>
+<entry key="description">All content package for WKND App</entry>
+<entry key="artifactId">wknd-app.all</entry>
+<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="packageType">container</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">com.adobe.aem.guides.wkndapp</entry>
+</properties>

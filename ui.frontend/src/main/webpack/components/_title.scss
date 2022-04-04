@@ -1,0 +1,16 @@
+.cmp-title {
+    text-align: center;
+}
+.cmp-title__text {
+    color: rgb(255, 255, 255);
+    background-color: rgb(56, 0, 109);
+    border-radius: 0.5rem;
+    transition: all 1s;
+}
+
+.cmp-title__text:hover {
+    color: rgb(255, 0, 200);
+    background-color: aqua;
+}
+
+.cmp-title__link {}

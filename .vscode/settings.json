@@ -1,0 +1,4 @@
+{
+    "aemsync.autopush": true,
+    "aemsync.acceptSelfSignedCert": true
+}

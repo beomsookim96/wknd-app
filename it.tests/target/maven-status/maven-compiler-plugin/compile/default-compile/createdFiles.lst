@@ -1,0 +1,4 @@
+com\adobe\aem\guides\wkndapp\it\tests\HtmlUnitClient.class
+com\adobe\aem\guides\wkndapp\it\tests\CreatePageIT.class
+com\adobe\aem\guides\wkndapp\it\tests\PublishPageValidationIT.class
+com\adobe\aem\guides\wkndapp\it\tests\GetPageIT.class
