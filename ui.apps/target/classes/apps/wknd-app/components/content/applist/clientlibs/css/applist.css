@@ -1,0 +1,10 @@
+.categories {
+    margin: 1rem;
+    color: beige;
+    text-align: center;
+}
+
+.category{
+    float: left;
+    margin: 1rem;
+}

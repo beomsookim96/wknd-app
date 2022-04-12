@@ -1,0 +1,9 @@
+<div data-sly-test="${!properties.url}">
+    <p>test</p>
+</div>
+<div data-sly-test="${properties.url}">
+    <div class="songContainer" data-sly-use.model="com.adobe.aem.guides.wkndapp.core.models.SongsModel">
+        <img  class="songImage" src="${model.result.image}"/>
+        <h1><a class="songTitle" href="${model.result.url}">${model.result.title}</a></h1>
+    </div>
+</div>

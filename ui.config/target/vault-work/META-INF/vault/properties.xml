@@ -4,7 +4,7 @@
 <comment>WKND App - UI config</comment>
 <entry key="cloudManagerTarget">none</entry>
 <entry key="allowIndexDefinitions">false</entry>
-<entry key="created">2022-04-04T01:24:40.002Z</entry>
+<entry key="created">2022-04-12T09:27:49.475Z</entry>
 <entry key="groupId">com.adobe.aem.guides.wkndapp</entry>
 <entry key="name">wknd-app.ui.config</entry>
 <entry key="description">UI config package for WKND App</entry>

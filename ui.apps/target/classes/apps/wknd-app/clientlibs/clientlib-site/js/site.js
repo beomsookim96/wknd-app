@@ -27,7 +27,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.scss */ \"./src/main/webpack/site/main.scss\");\n/* harmony import */ var C_app_workspace_wknd_app_ui_frontend_src_main_webpack_site_main_ts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/main/webpack/site/main.ts */ \"./src/main/webpack/site/main.ts\");\n/* harmony import */ var C_app_workspace_wknd_app_ui_frontend_src_main_webpack_components_helloworld_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/main/webpack/components/_helloworld.js */ \"./src/main/webpack/components/_helloworld.js\");\n/* harmony import */ var C_app_workspace_wknd_app_ui_frontend_src_main_webpack_components_helloworld_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(C_app_workspace_wknd_app_ui_frontend_src_main_webpack_components_helloworld_js__WEBPACK_IMPORTED_MODULE_2__);\n\r\n;\r\n\r\n\r\n\n\n//# sourceURL=webpack://aem-maven-archetype/./src/main/webpack/site/main.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.scss */ \"./src/main/webpack/site/main.scss\");\n/* harmony import */ var C_app_workspace_wknd_app_ui_frontend_src_main_webpack_site_main_ts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/main/webpack/site/main.ts */ \"./src/main/webpack/site/main.ts\");\n/* harmony import */ var C_app_workspace_wknd_app_ui_frontend_src_main_webpack_components_applist_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/main/webpack/components/_applist.js */ \"./src/main/webpack/components/_applist.js\");\n/* harmony import */ var C_app_workspace_wknd_app_ui_frontend_src_main_webpack_components_applist_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(C_app_workspace_wknd_app_ui_frontend_src_main_webpack_components_applist_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var C_app_workspace_wknd_app_ui_frontend_src_main_webpack_components_helloworld_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./src/main/webpack/components/_helloworld.js */ \"./src/main/webpack/components/_helloworld.js\");\n/* harmony import */ var C_app_workspace_wknd_app_ui_frontend_src_main_webpack_components_helloworld_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(C_app_workspace_wknd_app_ui_frontend_src_main_webpack_components_helloworld_js__WEBPACK_IMPORTED_MODULE_3__);\n\r\n;\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://aem-maven-archetype/./src/main/webpack/site/main.ts?");
+
+/***/ }),
+
+/***/ "./src/main/webpack/components/_applist.js":
+/*!*************************************************!*\
+  !*** ./src/main/webpack/components/_applist.js ***!
+  \*************************************************/
+/***/ (function() {
+
+eval("$(document).ready(function () {\r\n    $.ajax({\r\n        type: \"get\",\r\n        url: \"http://localhost:8080/getApps\",\r\n        data: \"\",\r\n        dataType: \"json\",\r\n        success: function (response) {\r\n            console.log('hello');\r\n            console.log(response);\r\n        }\r\n    });    \r\n});\n\n//# sourceURL=webpack://aem-maven-archetype/./src/main/webpack/components/_applist.js?");
 
 /***/ }),
 

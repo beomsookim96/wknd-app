@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+           <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="text"
+                        name="./text"/>
+                    <granularity
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/buttongroup"
+                        name="./granularity"
+                        selectionMode="single"
+                        text="Granularity"
+                        fieldLabel="Buttons">
+                        <items jcr:primaryType="nt:unstructured">
+                            <a
+                                jcr:primaryType="nt:unstructured"
+                                text="a"
+                                value="a"/>
+                            <b
+                                jcr:primaryType="nt:unstructured"
+                                text="b"
+                                value="b"/>
+                            <c
+                                jcr:primaryType="nt:unstructured"
+                                checked="{Boolean}true"
+                                text="c"
+                                value="c"/>
+                        </items>
+                    </granularity>
+                    <text2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                        fieldLabel="text2"
+                        name="./text2" />
+
+                    <check
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        name="./isChecked"
+                        text="checkbox" />
+                    <colorfield 
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                        value="#0074D9"
+                        >
+                    </colorfield>
+                    <fileupload
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/fileupload"
+                        text="File Upload"/>
+                    <datepicker
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                        name="./date"/>
+                    <select
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        emptyText="select"
+                        name="./asdc">
+                        <items jcr:primaryType="nt:unstructured">
+                            <option1 jcr:primaryType="nt:unstructured" text="op1"/>
+                            <option2 jcr:primaryType="nt:unstructured"  text="op2"/>
+                        </items>
+                    </select>
+                    <radiogroup
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                        name="./radioval"
+                        vertical="true">
+                        <items jcr:primaryType="nt:unstructured">
+                                <a jcr:primaryType="nt:unstructured" 
+                                    text="qwer"
+                                    disabled="true"/>
+                                <b jcr:primaryType="nt:unstructured" 
+                                text="rwqe"/>
+                                <empty jcr:primaryType="nt:unstructured" />
+                        </items>
+                    </radiogroup>
+                    <switch
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/switch"
+                    fieldLabel="switch"
+                    name="./switch"/>
+                    <password
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/password"
+                    />
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
