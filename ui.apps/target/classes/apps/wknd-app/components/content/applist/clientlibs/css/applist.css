@@ -2,9 +2,46 @@
     margin: 1rem;
     color: beige;
     text-align: center;
+
+}
+
+.previousPage {
+    float: left;
+    margin: 1rem;
+}
+
+.nextPage{
+    float: left;
+    margin: 1rem;
 }
 
 .category{
     float: left;
     margin: 1rem;
+}
+
+.applistContainer{
+    margin: 1rem;
+    color: rgb(0, 191, 255);
+    text-align: center;
+}
+
+.listContent{
+    float: left;
+    margin: 1rem;
+}
+
+.pager{
+    margin: 1rem;
+    color: rgb(0, 255, 34);
+    text-align: center;
+}
+
+.pagerItem{
+    float: left;
+    margin: 1rem;
+}
+
+.currentPage{
+    color: rgb(255, 0, 0);
 }

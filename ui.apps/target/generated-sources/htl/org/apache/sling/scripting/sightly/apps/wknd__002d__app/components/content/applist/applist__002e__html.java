@@ -48,7 +48,7 @@ _global_clientlib = renderContext.call("use", "/libs/granite/sightly/templates/c
         }
     }
 }
-out.write("\r\n\r\n<div class=\"categories\"></div>\r\n<div class=\"applist\"></div>\r\n<div class=\"pager\"></div>\r\n\r\n");
+out.write("\r\n\r\n<ul class=\"categories\"></ul>\r\n<ul class=\"applistContainer\"></ul>\r\n<ul class=\"pager\"></ul>\r\n\r\n");
 {
     boolean var_testvariable2 = (!renderContext.getObjectModel().toBoolean(renderContext.getObjectModel().resolveProperty(_dynamic_properties, "disclaimer")));
     if (var_testvariable2) {
@@ -59,22 +59,17 @@ out.write("\r\n");
 {
     Object var_testvariable3 = renderContext.getObjectModel().resolveProperty(_dynamic_properties, "disclaimer");
     if (renderContext.getObjectModel().toBoolean(var_testvariable3)) {
-        out.write("<div>\r\n    <p>");
+        out.write("<div>\r\n    <p");
         {
-            Object var_4 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_dynamic_properties, "disclaimer"), "text");
-            out.write(renderContext.getObjectModel().toString(var_4));
-        }
-        out.write("</p>\r\n    <p");
-        {
-            String var_attrcontent5 = ("color:" + renderContext.getObjectModel().toString(renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_dynamic_properties, "backgroundcolor"), "styleToken")));
+            String var_attrcontent4 = (("color:" + renderContext.getObjectModel().toString(renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_dynamic_properties, "backgroundcolor"), "styleToken"))) + "; float:left");
             out.write(" style=\"");
-            out.write(renderContext.getObjectModel().toString(var_attrcontent5));
+            out.write(renderContext.getObjectModel().toString(var_attrcontent4));
             out.write("\"");
         }
         out.write(">");
         {
-            Object var_6 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_dynamic_properties, "backgroundcolor"), "text");
-            out.write(renderContext.getObjectModel().toString(var_6));
+            Object var_5 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_dynamic_properties, "disclaimer"), "text");
+            out.write(renderContext.getObjectModel().toString(var_5));
         }
         out.write("</p>\r\n</div>");
     }

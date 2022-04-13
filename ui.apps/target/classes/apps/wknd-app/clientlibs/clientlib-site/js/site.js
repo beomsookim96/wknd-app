@@ -37,7 +37,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mai
   \*************************************************/
 /***/ (function() {
 
-eval("$(document).ready(function () {\r\n    $.ajax({\r\n        type: \"get\",\r\n        url: \"http://localhost:8080/getApps\",\r\n        data: \"\",\r\n        dataType: \"json\",\r\n        success: function (response) {\r\n            console.log('hello');\r\n            console.log(response);\r\n        }\r\n    });    \r\n});\n\n//# sourceURL=webpack://aem-maven-archetype/./src/main/webpack/components/_applist.js?");
+eval("");
 
 /***/ }),
 

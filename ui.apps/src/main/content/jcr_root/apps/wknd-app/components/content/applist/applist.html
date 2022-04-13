@@ -2,14 +2,13 @@
 <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientlib.all @ categories='applist'}"/>
 
-<div class="categories"></div>
-<div class="applist"></div>
-<div class="pager"></div>
+<ul class="categories"></ul>
+<ul class="applistContainer"></ul>
+<ul class="pager"></ul>
 
 <div data-sly-test="${!properties.disclaimer}">
     <p>this is default message.</p>
 </div>
 <div data-sly-test="${properties.disclaimer}">
-    <p>${properties.disclaimer}</p>
-    <p style="color:${properties.backgroundcolor @ context='styleToken'}">${properties.backgroundcolor}</p>
+    <p style="color:${properties.backgroundcolor @ context='styleToken'}; float:left">${properties.disclaimer}</p>
 </div>
