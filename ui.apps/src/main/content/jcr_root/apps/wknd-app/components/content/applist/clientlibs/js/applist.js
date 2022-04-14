@@ -11,7 +11,6 @@ let showPageNumber = 10;
 let currentPage;
 const allCategory = 'all';
 
-
 //drawFunctions
 const draw = {
 
@@ -45,27 +44,27 @@ const draw = {
 
     pagerItems : function(){
         if(currentPage>showPageNumber){
-            $(".pager").append("<li class='previousPage'>prev</li>");
+            $(componentId).find(".pager").append("<li class='previousPage'>prev</li>");
         }
 
         for (let i = currentPage; i < currentPage+showPageNumber; i++){
             if(i==pagecount){
                 if(i === currentPage){
-                    $(".pager").append("<li class='pagerItem currentPage'>"+(i)+"</li>");
+                    $(componentId).find(".pager").append("<li class='pagerItem currentPage'>"+(i)+"</li>");
                 }else{      
-                    $(".pager").append("<li class='pagerItem'>"+(i)+"</li>");
+                    $(componentId).find(".pager").append("<li class='pagerItem'>"+(i)+"</li>");
                 }
                 break;
             }
             if(i === currentPage){
-                $(".pager").append("<li class='pagerItem currentPage'>"+(i)+"</li>");
+                $(componentId).find(".pager").append("<li class='pagerItem currentPage'>"+(i)+"</li>");
             }else{
-                $(".pager").append("<li class='pagerItem'>"+(i)+"</li>");
+                $(componentId).find(".pager").append("<li class='pagerItem'>"+(i)+"</li>");
             }
         }
 
         if(showPageNumber*(parseInt(currentPage/showPageNumber)+1) < pagecount){
-            $(".pager").append("<li class='nextPage'>next</li>");
+            $(componentId).find(".pager").append("<li class='nextPage'>next</li>");
         }
     },
 
@@ -74,7 +73,7 @@ const draw = {
             if(i==currentCategoryCount){
                 break;
             }
-            $(".applistContainer").append("<li class='listContent'>"+currentCategoryApps[i][0]+"<p hidden class='description'>"+currentCategoryApps[i][1]+"</p></li>");
+            $(componentId).find(".applistContainer").append("<li class='listContent'>"+currentCategoryApps[i][0]+"<p hidden class='description'>"+currentCategoryApps[i][1]+"</p></li>");
         }
     },
 
@@ -89,25 +88,24 @@ const draw = {
 const remove = {
 
     pagerItems : function(){
-        $(".pagerItem").remove();
-        $(".previousPage").remove();
-        $(".nextPage").remove();
+        $(componentId).find(".pagerItem").remove();
+        $(componentId).find(".previousPage").remove();
+        $(componentId).find(".nextPage").remove();
     },
 
     applist :  function(){
-        $(".listContent").remove();
+        $(componentId).find(".listContent").remove();
     },
 
     all : function(){
         remove.pagerItems();
         remove.applist();
-    },
+    }
 
 }
 
 //document ready
 $(document).ready(function () {
-
     
     //ajax getApps
     $.ajax({
@@ -129,6 +127,7 @@ $(document).ready(function () {
     const onClickEvents = {
 
         categoryListItem : $(".categories").on("click", "li", function(){
+            componentId = util.getComponentId(this.closest(".categories"));
             remove.all();
             currentCategory = this.innerText;
             draw.applistByCategory(currentCategory);
@@ -136,12 +135,14 @@ $(document).ready(function () {
         }),
     
         pagerPrevBtn : $(".pager").on("click",".previousPage",function(){
+            componentId = util.getComponentId(this.closest(".pager"));
             currentPage = ((parseInt(parseInt(currentPage-1)/showPageNumber)-1)*showPageNumber+1);
             remove.all();
             draw.appsAndPagerItems();
         }),
     
         pagerNextBtn : $(".pager").on("click",".nextPage",function(){
+            componentId = util.getComponentId(this.closest(".pager"));
             currentPage = ((parseInt(parseInt(currentPage-1)/showPageNumber)+1)*showPageNumber+1);
             remove.all();
             draw.appsAndPagerItems();
@@ -152,13 +153,20 @@ $(document).ready(function () {
         }),
     
         pagerListItem : $(".pager").on("click",".pagerItem",function(){
-    
+            componentId = util.getComponentId(this.closest(".pager"));
             $(".pager").find('.currentPage').removeClass('currentPage');
             $(this).addClass('currentPage');
             currentPage = this.innerText;
             remove.applist();
             draw.apps();
         })
+    }
+    
+    //utilities
+    const util = {
+        getComponentId : function(element){
+            return '#'+$(element).closest('div').attr('id');
+        }
     }
         
 });

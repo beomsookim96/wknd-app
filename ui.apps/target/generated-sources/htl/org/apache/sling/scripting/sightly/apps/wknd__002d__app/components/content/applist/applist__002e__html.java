@@ -35,6 +35,7 @@ public final class applist__002e__html extends RenderUnit {
 // Main Template Body -----------------------------------------------------------------------------
 
 Object _global_clientlib = null;
+Object _global_thisnode = null;
 Object _dynamic_properties = bindings.get("properties");
 out.write("<script src=\"https://code.jquery.com/jquery-3.6.0.min.js\" integrity=\"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=\" crossorigin=\"anonymous\"></script>\r\n");
 _global_clientlib = renderContext.call("use", "/libs/granite/sightly/templates/clientlib.html", obj());
@@ -48,28 +49,51 @@ _global_clientlib = renderContext.call("use", "/libs/granite/sightly/templates/c
         }
     }
 }
-out.write("\r\n\r\n<ul class=\"categories\"></ul>\r\n<ul class=\"applistContainer\"></ul>\r\n<ul class=\"pager\"></ul>\r\n\r\n");
+out.write("\r\n");
+_global_thisnode = renderContext.call("use", com.adobe.aem.guides.wkndapp.core.models.NodeNameExporter.class.getName(), obj());
+out.write("<div>\r\n    <div");
 {
-    boolean var_testvariable2 = (!renderContext.getObjectModel().toBoolean(renderContext.getObjectModel().resolveProperty(_dynamic_properties, "disclaimer")));
-    if (var_testvariable2) {
+    Object var_attrvalue2 = renderContext.getObjectModel().resolveProperty(_global_thisnode, "nodeName");
+    {
+        Object var_attrcontent3 = renderContext.call("xss", var_attrvalue2, "attribute");
+        {
+            boolean var_shoulddisplayattr5 = (((null != var_attrcontent3) && (!"".equals(var_attrcontent3))) && ((!"".equals(var_attrvalue2)) && (!((Object)false).equals(var_attrvalue2))));
+            if (var_shoulddisplayattr5) {
+                out.write(" id");
+                {
+                    boolean var_istrueattr4 = (var_attrvalue2.equals(true));
+                    if (!var_istrueattr4) {
+                        out.write("=\"");
+                        out.write(renderContext.getObjectModel().toString(var_attrcontent3));
+                        out.write("\"");
+                    }
+                }
+            }
+        }
+    }
+}
+out.write(">\r\n        <ul class=\"categories\"></ul>\r\n        <ul class=\"applistContainer\"></ul>\r\n        <ul class=\"pager\"></ul>\r\n    </div>\r\n</div>\r\n\r\n");
+{
+    boolean var_testvariable6 = (!renderContext.getObjectModel().toBoolean(renderContext.getObjectModel().resolveProperty(_dynamic_properties, "disclaimer")));
+    if (var_testvariable6) {
         out.write("<div>\r\n    <p>this is default message.</p>\r\n</div>");
     }
 }
 out.write("\r\n");
 {
-    Object var_testvariable3 = renderContext.getObjectModel().resolveProperty(_dynamic_properties, "disclaimer");
-    if (renderContext.getObjectModel().toBoolean(var_testvariable3)) {
+    Object var_testvariable7 = renderContext.getObjectModel().resolveProperty(_dynamic_properties, "disclaimer");
+    if (renderContext.getObjectModel().toBoolean(var_testvariable7)) {
         out.write("<div>\r\n    <p");
         {
-            String var_attrcontent4 = (("color:" + renderContext.getObjectModel().toString(renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_dynamic_properties, "backgroundcolor"), "styleToken"))) + "; float:left");
+            String var_attrcontent8 = (("color:" + renderContext.getObjectModel().toString(renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_dynamic_properties, "backgroundcolor"), "styleToken"))) + "; float:left");
             out.write(" style=\"");
-            out.write(renderContext.getObjectModel().toString(var_attrcontent4));
+            out.write(renderContext.getObjectModel().toString(var_attrcontent8));
             out.write("\"");
         }
         out.write(">");
         {
-            Object var_5 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_dynamic_properties, "disclaimer"), "text");
-            out.write(renderContext.getObjectModel().toString(var_5));
+            Object var_9 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_dynamic_properties, "disclaimer"), "text");
+            out.write(renderContext.getObjectModel().toString(var_9));
         }
         out.write("</p>\r\n</div>");
     }

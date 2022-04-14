@@ -8,24 +8,26 @@ Bundle-Version: 1.0.0.SNAPSHOT
 Export-Package: com.adobe.aem.guides.wkndapp.core.filters;version="1.0
  ";uses:="javax.servlet",com.adobe.aem.guides.wkndapp.core.listeners;v
  ersion="1.0";uses:="org.apache.sling.api.resource.observation",com.ad
- obe.aem.guides.wkndapp.core.models;version="1.0";uses:="javax.annotat
- ion,org.apache.sling.api,org.apache.sling.api.resource,org.apache.sli
- ng.models.annotations,org.apache.sling.models.annotations.injectorspe
- cific",com.adobe.aem.guides.wkndapp.core.schedulers;version="1.0",com
- .adobe.aem.guides.wkndapp.core.servlets;version="1.0";uses:="javax.se
- rvlet,org.apache.sling.api,org.apache.sling.api.servlets"
+ obe.aem.guides.wkndapp.core.models;version="1.0";uses:="com.fasterxml
+ .jackson.annotation,javax.annotation,org.apache.sling.api,org.apache.
+ sling.api.resource,org.apache.sling.models.annotations,org.apache.sli
+ ng.models.annotations.injectorspecific",com.adobe.aem.guides.wkndapp.
+ core.schedulers;version="1.0",com.adobe.aem.guides.wkndapp.core.servl
+ ets;version="1.0";uses:="javax.servlet,org.apache.sling.api,org.apach
+ e.sling.api.servlets"
 Import-Package: javax.annotation;version="0.0.0",com.adobe.aem.guides.
  wkndapp.core.filters;version="[1.0,2)",com.adobe.aem.guides.wkndapp.c
  ore.listeners;version="[1.0,2)",com.adobe.aem.guides.wkndapp.core.sch
  edulers;version="[1.0,2)",com.adobe.aem.guides.wkndapp.core.servlets;
- version="[1.0,2)",com.day.cq.wcm.api;version="[1.29,2)",com.google.gs
- on;version="[2.8,3)",javax.jcr;version="[2.0,3)",javax.servlet;versio
- n="[3.1,4)",org.apache.sling.api;version="[2.3,3)",org.apache.sling.a
- pi.request;version="[2.4,3)",org.apache.sling.api.resource;version="[
- 2.12,3)",org.apache.sling.api.resource.observation;version="[1.2,2)",
- org.apache.sling.api.servlets;version="[2.3,3)",org.apache.sling.mode
- ls.annotations;version="[1.5,2)",org.apache.sling.models.annotations.
- injectorspecific;version="[1.1,2)",org.slf4j;version="[1.7,2)"
+ version="[1.0,2)",com.day.cq.wcm.api;version="[1.29,2)",com.fasterxml
+ .jackson.annotation;version="[2.11,3)",com.google.gson;version="[2.8,
+ 3)",javax.jcr;version="[2.0,3)",javax.servlet;version="[3.1,4)",org.a
+ pache.sling.api;version="[2.3,3)",org.apache.sling.api.request;versio
+ n="[2.4,3)",org.apache.sling.api.resource;version="[2.12,3)",org.apac
+ he.sling.api.resource.observation;version="[1.2,2)",org.apache.sling.
+ api.servlets;version="[2.3,3)",org.apache.sling.models.annotations;ve
+ rsion="[1.5,2)",org.apache.sling.models.annotations.injectorspecific;
+ version="[1.1,2)",org.slf4j;version="[1.7,2)"
 Provide-Capability: osgi.service;objectClass:List<String>="java.lang.R
  unnable",osgi.service;objectClass:List<String>="javax.servlet.Filter"
  ;uses:="javax.servlet",osgi.service;objectClass:List<String>="javax.s
@@ -42,5 +44,6 @@ Service-Component: OSGI-INF/com.adobe.aem.guides.wkndapp.core.filters.
  kndapp.core.servlets.SimpleServlet.xml
 Sling-Model-Classes: com.adobe.aem.guides.wkndapp.core.models.ByLineMo
  del,com.adobe.aem.guides.wkndapp.core.models.HelloWorldModel,com.adob
- e.aem.guides.wkndapp.core.models.SongsModel
+ e.aem.guides.wkndapp.core.models.NodeNameExporter,com.adobe.aem.guide
+ s.wkndapp.core.models.SongsModel
 

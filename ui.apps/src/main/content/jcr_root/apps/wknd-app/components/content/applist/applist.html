@@ -1,10 +1,13 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientlib.all @ categories='applist'}"/>
-
-<ul class="categories"></ul>
-<ul class="applistContainer"></ul>
-<ul class="pager"></ul>
+<div data-sly-use.thisnode="com.adobe.aem.guides.wkndapp.core.models.NodeNameExporter">
+    <div id="${thisnode.nodeName}">
+        <ul class="categories"></ul>
+        <ul class="applistContainer"></ul>
+        <ul class="pager"></ul>
+    </div>
+</div>
 
 <div data-sly-test="${!properties.disclaimer}">
     <p>this is default message.</p>
