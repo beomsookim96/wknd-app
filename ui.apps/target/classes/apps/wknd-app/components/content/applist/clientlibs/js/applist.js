@@ -1,4 +1,3 @@
-
 let jsonobj;
 let currentCategory;
 let currentCategoryApps = [];
@@ -16,18 +15,17 @@ const allCategory = 'all';
 //drawFunctions
 const draw = {
 
-    category : function(element){
+    category : function(element){ // drawCategory
         $(".categories").append("<li class='category all'>"+allCategory+"</li>");
         jsonobj.categories.forEach(element => {
             $(".categories").append("<li class='category'>"+element+"</li>");
         })
     },
 
-    applist : function(category){
+    applistByCategory : function(category){ // drawApplistByCategory
         currentCategoryCount = 0;
         currentCategoryApps = [];
         currentPage = 1;
-        console.log(category);
         apps.forEach(element => {
             if(element.category === category){
                 currentCategoryCount++;
@@ -35,10 +33,10 @@ const draw = {
                 currentCategoryApps.push(innerApp);
             }
         });
-        if(currentCategoryCount%showNumber === 0){
-            pagecount = parseInt(currentCategoryCount/showNumber);
-        }else{
-            pagecount = parseInt(currentCategoryCount/showNumber)+1;
+
+        pagecount = parseInt(currentCategoryCount/showNumber);
+        if(currentCategoryCount%showNumber !== 0){
+            pagecount++;
         }
 
         draw.pagerItems;
@@ -107,19 +105,18 @@ const remove = {
 
 }
 
-
+//document ready
 $(document).ready(function () {
 
-    currentCategory = '.all';
-
+    
+    //ajax getApps
     $.ajax({
         type: "get",
         url: "http://localhost:8080/getApps",
         data: "",
         dataType: "json",
         success: function (response) {
-            console.log('ajax success');
-
+            currentCategory = '.all';
             jsonobj = response;
             categories = jsonobj.categories;
             apps = jsonobj.apps;
@@ -128,38 +125,40 @@ $(document).ready(function () {
         }
     });
     
+    //onClick events
+    const onClickEvents = {
 
-    $(".categories").on("click", "li", function(){
-        remove.all();
-        currentCategory = this.innerText;
-        draw.applist(currentCategory);
-        draw.pagerItems();
-    })
-
-    $(".pager").on("click",".previousPage",function(){
-        currentPage = ((parseInt(parseInt(currentPage-1)/showPageNumber)-1)*showPageNumber+1);
-        remove.all();
-        draw.appsAndPagerItems();
-    })
-
-    $(".pager").on("click",".nextPage",function(){
-        currentPage = ((parseInt(parseInt(currentPage-1)/showPageNumber)+1)*showPageNumber+1);
-        remove.all();
-        draw.appsAndPagerItems();
-    })
-
-    $(".applistContainer").on("click","li",function(){
-        alert($(this).find('.description').text());
-    })
-
-    $(".pager").on("click",".pagerItem",function(){
-
-        $(".pager").find('.currentPage').removeClass('currentPage');
-        $(this).addClass('currentPage');
-        currentPage = this.innerText;
-        remove.applist();
-        draw.apps();
-    })
-
+        categoryListItem : $(".categories").on("click", "li", function(){
+            remove.all();
+            currentCategory = this.innerText;
+            draw.applistByCategory(currentCategory);
+            draw.pagerItems();
+        }),
+    
+        pagerPrevBtn : $(".pager").on("click",".previousPage",function(){
+            currentPage = ((parseInt(parseInt(currentPage-1)/showPageNumber)-1)*showPageNumber+1);
+            remove.all();
+            draw.appsAndPagerItems();
+        }),
+    
+        pagerNextBtn : $(".pager").on("click",".nextPage",function(){
+            currentPage = ((parseInt(parseInt(currentPage-1)/showPageNumber)+1)*showPageNumber+1);
+            remove.all();
+            draw.appsAndPagerItems();
+        }),
+    
+        appListItem : $(".applistContainer").on("click","li",function(){
+            alert($(this).find('.description').text());
+        }),
+    
+        pagerListItem : $(".pager").on("click",".pagerItem",function(){
+    
+            $(".pager").find('.currentPage').removeClass('currentPage');
+            $(this).addClass('currentPage');
+            currentPage = this.innerText;
+            remove.applist();
+            draw.apps();
+        })
+    }
         
 });
