@@ -154,7 +154,7 @@ $(document).ready(function () {
     
         pagerListItem : $(".pager").on("click",".pagerItem",function(){
             componentId = util.getComponentId(this.closest(".pager"));
-            $(".pager").find('.currentPage').removeClass('currentPage');
+            $(componentId).find(".pager").find('.currentPage').removeClass('currentPage');
             $(this).addClass('currentPage');
             currentPage = this.innerText;
             remove.applist();
